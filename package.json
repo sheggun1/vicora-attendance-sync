@@ -2,7 +2,7 @@
   "name": "vicora-attendance-sync",
   "version": "0.4.0",
   "description": "Offline-first biometric attendance importer with A12 LAN diagnostics",
-  "main": "src/main.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron .",
     "dev": "electron .",
@@ -23,14 +23,22 @@
       "output": "dist"
     },
     "files": [
-      "src/**/*",
+      "main.js",
+      "preload.js",
+      "index.html",
+      "renderer.js",
+      "style.css",
       "package.json"
     ],
     "win": {
       "target": [
-        "nsis"
-      ],
-      "icon": "assets/vicora.ico"
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     },
     "nsis": {
       "oneClick": false,
