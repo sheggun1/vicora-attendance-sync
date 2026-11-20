@@ -6,7 +6,7 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron .",
-    "build:win": "electron-builder --win nsis"
+    "build:win": "electron-builder --win nsis --publish never"
   },
   "dependencies": {
     "better-sqlite3": "^12.4.1",
@@ -34,9 +34,7 @@
       "target": [
         {
           "target": "nsis",
-          "arch": [
-            "x64"
-          ]
+          "arch": ["x64"]
         }
       ]
     },
