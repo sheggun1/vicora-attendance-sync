@@ -1,0 +1,43 @@
+{
+  "name": "vicora-attendance-sync",
+  "version": "0.4.0",
+  "description": "Offline-first biometric attendance importer with A12 LAN diagnostics",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "build:win": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.4.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "electron": "^39.0.0",
+    "electron-builder": "^26.0.12"
+  },
+  "build": {
+    "appId": "com.veehicee.vicora.attendance",
+    "productName": "VICORA Attendance Sync",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "assets/vicora.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "VICORA Attendance Sync"
+    }
+  }
+}
